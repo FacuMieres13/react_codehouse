@@ -1,0 +1,12 @@
+REACT INICIO
+
+DOM: DOCUMENT OBJECT MODEL --> Representacion de la estructura HTML
+
+Virtual DOM: Lo mismo que el DOM, pero la diferencia es que esta en la memoria de la aplicacion, es decir, que si se hace un cambio lo modifica de la memoria, por esto es mucho mas rapido.
+Diffing: Si mi virtual DOM es diferente al DOM, cambio el DOM.
+Fiber Tree - React Fiber: Estructura de datos, realiza los cambios de manera rapida.
+
+
+NPM: Node Package Manager
+
+
