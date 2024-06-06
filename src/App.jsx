@@ -1,10 +1,10 @@
 
-import './App.css'
-import { NavBar } from './components/NavBar'
+import { Footer } from './components/footer/Footer'
+import { NavBar } from './components/navbar/NavBar'
 
 function App() {
-  const condition = true
-  let result = null
+  // const condition = true
+  // let result = null
 // IF NORMAL PERO DEMASIADAS LINEAS
 // if(condition){
 //   result = "correct"
@@ -27,13 +27,14 @@ function App() {
   // MOSTRAR EN STRING
   // console.log(...arra1)
   // const arrayNuevo = 
-  let curso = 12345
+  // let curso = 12345
   return (
     <>
-    <h1>Hola mundo</h1>
+    {/* <h1>Hola mundo</h1>
     <h2>Estamos en el custo de coder</h2>
-    <h2>Curso: {curso}</h2>
+    <h2>Curso: {curso}</h2> */}
     <NavBar />
+    <Footer />
     </>
   )
 }
