@@ -1,3 +1,9 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
 .navbarContainer {
-    background-color: peru;
+  background-color: peru;
+  display: flex;
+  align-items: center;
 }
