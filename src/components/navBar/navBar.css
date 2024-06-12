@@ -1,0 +1,21 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+}
+.navbarContainer {
+  background-color: #622f0b;
+  color: #ffe8d2;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.navbarContainer a {
+  text-decoration: none;
+  color: #ffe8d2;
+}
+
+.logo-img {
+  width: 100px;
+  padding: 10px;
+}
