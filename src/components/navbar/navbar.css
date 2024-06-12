@@ -1,3 +1,16 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+}
 .navbarContainer {
-    background-color: peru;
+  background-color: #622f0b;
+  color: #ffe8d2;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100px;
+  padding: 10px;
 }

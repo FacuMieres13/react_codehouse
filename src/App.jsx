@@ -1,21 +1,19 @@
-
-import { Footer } from './components/footer/Footer'
-import { NavBar } from './components/navbar/NavBar'
+import { Footer } from "./components/footer/Footer";
+import { NavBar } from "./components/navBar/NavBar";
+import { ItemListContainter } from "./pages/ItemListContainer";
 
 function App() {
   // const condition = true
   // let result = null
-// IF NORMAL PERO DEMASIADAS LINEAS
-// if(condition){
-//   result = "correct"
-// }else {
-//   result = "incorrect"
-// }
-// console.log(`This is ${result}`)
+  // IF NORMAL PERO DEMASIADAS LINEAS
+  // if(condition){
+  //   result = "correct"
+  // }else {
+  //   result = "incorrect"
+  // }
+  // console.log(`This is ${result}`)
 
-
-
-// IF TERNARIO SUGAR SYNTAXS
+  // IF TERNARIO SUGAR SYNTAXS
   // console.log(`This is ${condition ? "correct" : "incorrect"}`)
 
   // SPREED OPETAROR
@@ -26,17 +24,18 @@ function App() {
   // console.log(arra1 + "")
   // MOSTRAR EN STRING
   // console.log(...arra1)
-  // const arrayNuevo = 
+  // const arrayNuevo =
   // let curso = 12345
   return (
     <>
-    {/* <h1>Hola mundo</h1>
+      {/* <h1>Hola mundo</h1>
     <h2>Estamos en el custo de coder</h2>
     <h2>Curso: {curso}</h2> */}
-    <NavBar />
-    <Footer />
+      <NavBar />
+      <ItemListContainter greeting={"Hola como estas?"} />
+      {/* <Footer /> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
