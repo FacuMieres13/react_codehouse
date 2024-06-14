@@ -1,12 +1,29 @@
 // LoginContainer --> javascript
 // Login ---> html
 
-export const ItemList = ({ greeting, sumar, numero, cambiarNombre }) => {
+import { ProductCard } from "../../components/productCard/ProductCard";
+
+export const ItemList = ({ items }) => {
   return (
-    <div>
-      <h1> {greeting} </h1>
-      <button onClick={sumar}>sumar</button>
-      <button onClick={cambiarNombre}>Cambiar nombre</button>
+    <div style={{ display: "flex", gap: "20px" }}>
+      {items.map((element) => {
+        return (
+          <ProductCard
+            // se debe pasar siempre la propiedad key, y no se debe usar posteriormente
+            key={element.id}
+            title={element.title}
+            description={element.description}
+            price={element.price}
+          />
+        );
+      })}
+      {/* {items.length > 0 ? (
+        <ProductCard
+          title={items[0].title}
+          description={items[0].description}
+          price={items[0].price}
+        />
+      ) : null} */}
     </div>
   );
 };
