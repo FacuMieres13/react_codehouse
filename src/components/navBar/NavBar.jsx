@@ -1,25 +1,24 @@
-import React from "react";
-import "./navBar.css";
-import { CarWidget } from "../carWidget/CarWidget";
-import Logo from "/public/media/Logo.png";
-export const NavBar = () => {
+import CartWidget from "../cartWidget/CartWidget";
+import Logo from "/public/Media/EokaStoreLogo.png";
+import "./navbar.css";
+import { Link } from "react-router-dom";
+export const Navbar = () => {
   return (
-    <div className="navbarContainer">
-      <a href="">
-        <img className="logo-img" src={Logo} alt="" srcset="" />
-      </a>
-      <ul style={{ display: "flex", gap: "20px" }}>
-        <a href="">
-          <li style={{ listStyle: "none" }}>Todas</li>
-        </a>
-        <a href="">
-          <li style={{ listStyle: "none" }}>Urbanas</li>
-        </a>
-        <a href="">
-          <li style={{ listStyle: "none" }}>Deportivas</li>
-        </a>
-      </ul>
-      <CarWidget />
+    <div>
+      <>
+        <div className="containerNavbar">
+          <Link style={{ color: "beige" }} to="/">
+            <img className="img-logo" src={Logo} alt="Logo Eoka Store" />
+          </Link>
+          <ul className="categories">
+            <Link to="/">All Games</Link>
+            <Link to="/category/shooters">Shooters</Link>
+            <Link to="/category/sports">Sports</Link>
+            <Link to="/category/adventure">Adventure</Link>
+          </ul>
+          <CartWidget />
+        </div>
+      </>
     </div>
   );
 };
