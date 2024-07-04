@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column;
 }
 
 .logo-footer {
@@ -16,5 +15,10 @@
 }
 .ul-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 0.3em;
+
+}
+.eslogan {
+  font-family: "Exo 2", sans-serif;
 }

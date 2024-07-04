@@ -10,24 +10,25 @@ const Footer = () => {
         <a href="">
           <img className="logo-footer" src={Logo} alt="" />
         </a>
+        <h3 className="eslogan">Jugamos juntos, ganamos juntos.</h3>
 
         <ul className="ul-footer">
-          <li>
-            <a href="">
-              <img src={LogoWpp} alt="" srcset="" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src={LogoFacebook} alt="" srcset="" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src={LogoInstagram} alt="" srcset="" />
-            </a>
-          </li>
-        </ul>
+  <li>
+    <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+      <img src={LogoWpp} alt="WhatsApp" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src={LogoFacebook} alt="Facebook" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src={LogoInstagram} alt="Instagram" />
+    </a>
+  </li>
+</ul>
       </div>
     </>
   );
