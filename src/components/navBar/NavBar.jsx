@@ -13,7 +13,7 @@ export const Navbar = () => {
           <ul className="categories">
             <Link to="/">All Games</Link>
             <Link to="/category/shooters">Shooters</Link>
-            <Link to="/category/sports">Sports</Link>
+            <Link to="/category/strategy">Strategy</Link>
             <Link to="/category/adventure">Adventure</Link>
           </ul>
           <CartWidget />

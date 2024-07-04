@@ -10,7 +10,8 @@ export let products = [
     publisher: "Tencent",
     developer: "Level Infinite",
     release_date: "2024-06-22",
-    freetogame_profile_url: "https://www.freetogame.com/tarisland"
+    freetogame_profile_url: "https://www.freetogame.com/tarisland",
+    category: "adventure"
   },
   {
     id: 540,
@@ -23,7 +24,8 @@ export let products = [
     publisher: "Activision Blizzard",
     developer: "Blizzard Entertainment",
     release_date: "2022-10-04",
-    freetogame_profile_url: "https://www.freetogame.com/overwatch-2"
+    freetogame_profile_url: "https://www.freetogame.com/overwatch-2",
+    category: "shooters"
   },
   {
     id: 516,
@@ -36,7 +38,8 @@ export let products = [
     publisher: "KRAFTON, Inc.",
     developer: "KRAFTON, Inc.",
     release_date: "2022-01-12",
-    freetogame_profile_url: "https://www.freetogame.com/pubg"
+    freetogame_profile_url: "https://www.freetogame.com/pubg",
+    category: "shooters"
   },
   {
     id: 508,
@@ -49,7 +52,8 @@ export let products = [
     publisher: "Gaijin Entertainment",
     developer: "Darkflow Software",
     release_date: "2021-04-08",
-    freetogame_profile_url: "https://www.freetogame.com/enlisted"
+    freetogame_profile_url: "https://www.freetogame.com/enlisted",
+    category: "shooters"
   },
   {
     id: 345,
@@ -62,7 +66,8 @@ export let products = [
     publisher: "InnoGames",
     developer: "InnoGames",
     release_date: "2012-04-17",
-    freetogame_profile_url: "https://www.freetogame.com/forge-of-empires"
+    freetogame_profile_url: "https://www.freetogame.com/forge-of-empires",
+    category: "strategy"
   },
   {
     id: 475,
@@ -75,7 +80,8 @@ export let products = [
     publisher: "miHoYo",
     developer: "miHoYo",
     release_date: "2020-09-28",
-    freetogame_profile_url: "https://www.freetogame.com/genshin-impact"
+    freetogame_profile_url: "https://www.freetogame.com/genshin-impact",
+    category: "adventure"
   },
   {
     id: 523,
@@ -88,7 +94,8 @@ export let products = [
     publisher: "Mediatonic",
     developer: "Mediatonic",
     release_date: "2020-08-04",
-    freetogame_profile_url: "https://www.freetogame.com/fall-guys"
+    freetogame_profile_url: "https://www.freetogame.com/fall-guys",
+    category: "strategy"
   },
   {
     id: 340,
@@ -114,7 +121,8 @@ export let products = [
     publisher: "InnoGames",
     developer: "InnoGames",
     release_date: "2015-04-08",
-    freetogame_profile_url: "https://www.freetogame.com/elvenar"
+    freetogame_profile_url: "https://www.freetogame.com/elvenar",
+    category: "adventure"
   },
   {
     id: 11,
@@ -127,7 +135,8 @@ export let products = [
     publisher: "Perfect World Entertainment",
     developer: "Cryptic Studios",
     release_date: "2013-12-06",
-    freetogame_profile_url: "https://www.freetogame.com/neverwinter"
+    freetogame_profile_url: "https://www.freetogame.com/neverwinter",
+    category: "strategy"
   },
   {
     id: 380,
@@ -140,7 +149,8 @@ export let products = [
     publisher: "Bigpoint",
     developer: "Bigpoint",
     release_date: "2006-12-11",
-    freetogame_profile_url: "https://www.freetogame.com/darkorbit"
+    freetogame_profile_url: "https://www.freetogame.com/darkorbit",
+    category: "shooters"
   },
   {
     id: 517,
@@ -153,7 +163,8 @@ export let products = [
     publisher: "Amazon Games",
     developer: "Smilegate RPG",
     release_date: "2022-02-11",
-    freetogame_profile_url: "https://www.freetogame.com/lost-ark"
+    freetogame_profile_url: "https://www.freetogame.com/lost-ark",
+    category: "adventure"
   },
   {
     id: 573,
@@ -166,7 +177,8 @@ export let products = [
     publisher: "Game Hollywood Games",
     developer: "Game Hollywood Games",
     release_date: "2023-12-20",
-    freetogame_profile_url: "https://www.freetogame.com/titan-revenge"
+    freetogame_profile_url: "https://www.freetogame.com/titan-revenge",
+    category: "strategy"
   },
   {
     id: 521,
@@ -179,7 +191,8 @@ export let products = [
     publisher: "Blizzard Entertainment",
     developer: "Blizzard Entertainment",
     release_date: "2022-06-02",
-    freetogame_profile_url: "https://www.freetogame.com/diablo-immortal"
+    freetogame_profile_url: "https://www.freetogame.com/diablo-immortal",
+    category: "strategy"
   },
   {
     id: 522,
@@ -192,6 +205,7 @@ export let products = [
     publisher: "Gala Lab",
     developer: "Gala Lab",
     release_date: "2022-06-14",
-    freetogame_profile_url: "https://www.freetogame.com/flyff-universe"
+    freetogame_profile_url: "https://www.freetogame.com/flyff-universe",
+    category: "strategy"
   },
 ]
