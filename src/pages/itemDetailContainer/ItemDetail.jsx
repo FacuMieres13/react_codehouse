@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
           sx={{ objectFit: 'cover' }}
         />
         <CardContent>
-        <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }}>
+        <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center', fontFamily: '"Exo 2", sans-serif' }}>
             {item.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
