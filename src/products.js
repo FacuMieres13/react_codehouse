@@ -5,12 +5,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/582/thumbnail.jpg",
     short_description: "A cross-platform MMORPG developed by Level Infinite and Published by Tencent.",
     game_url: "https://www.freetogame.com/open/tarisland",
-    genre: "MMORPG",
-    platform: "PC (Windows)",
-    publisher: "Tencent",
-    developer: "Level Infinite",
-    release_date: "2024-06-22",
-    freetogame_profile_url: "https://www.freetogame.com/tarisland",
     category: "adventure"
   },
   {
@@ -19,12 +13,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/540/thumbnail.jpg",
     short_description: "A hero-focused first-person team shooter from Blizzard Entertainment.",
     game_url: "https://www.freetogame.com/open/overwatch-2",
-    genre: "Shooter",
-    platform: "PC (Windows)",
-    publisher: "Activision Blizzard",
-    developer: "Blizzard Entertainment",
-    release_date: "2022-10-04",
-    freetogame_profile_url: "https://www.freetogame.com/overwatch-2",
     category: "shooters"
   },
   {
@@ -33,12 +21,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/516/thumbnail.jpg",
     short_description: "Get into the action in one of the longest running battle royale games PUBG Battlegrounds.",
     game_url: "https://www.freetogame.com/open/pubg",
-    genre: "Shooter",
-    platform: "PC (Windows)",
-    publisher: "KRAFTON, Inc.",
-    developer: "KRAFTON, Inc.",
-    release_date: "2022-01-12",
-    freetogame_profile_url: "https://www.freetogame.com/pubg",
     category: "shooters"
   },
   {
@@ -47,12 +29,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/508/thumbnail.jpg",
     short_description: "Get ready to command your own World War II military squad in Gaijin and Darkflow Software’s MMO squad-based shooter Enlisted. ",
     game_url: "https://www.freetogame.com/open/enlisted",
-    genre: "Shooter",
-    platform: "PC (Windows)",
-    publisher: "Gaijin Entertainment",
-    developer: "Darkflow Software",
-    release_date: "2021-04-08",
-    freetogame_profile_url: "https://www.freetogame.com/enlisted",
     category: "shooters"
   },
   {
@@ -61,26 +37,13 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/345/thumbnail.jpg",
     short_description: "A free to play 2D browser-based online strategy game, become the leader and raise your city.",
     game_url: "https://www.freetogame.com/open/forge-of-empires",
-    genre: "Strategy",
-    platform: "Web Browser",
-    publisher: "InnoGames",
-    developer: "InnoGames",
-    release_date: "2012-04-17",
-    freetogame_profile_url: "https://www.freetogame.com/forge-of-empires",
     category: "strategy"
   },
   {
     id: 475,
     title: "Genshin Impact",
     thumbnail: "https://www.freetogame.com/g/475/thumbnail.jpg",
-    short_description: "If you’ve been looking for a game to scratch that open-world action RPG itch, one with perhaps a bit of Asian flair, then you’re going to want to check out miHoYo’s Genshin Impact.",
-    game_url: "https://www.freetogame.com/open/genshin-impact",
-    genre: "Action RPG",
-    platform: "PC (Windows)",
-    publisher: "miHoYo",
-    developer: "miHoYo",
-    release_date: "2020-09-28",
-    freetogame_profile_url: "https://www.freetogame.com/genshin-impact",
+    short_description: "If you've been looking for a game to scratch that open-world action RPG itch, one with perhaps a bit of Asian flair, then you're going to want to check out miHoYo's Genshin Impact.",
     category: "adventure"
   },
   {
@@ -89,12 +52,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/523/thumbnail.jpg",
     short_description: "Play the most competitive massively multiplayer party royale game featuring beans ever for free on a variety of platforms. ",
     game_url: "https://www.freetogame.com/open/fall-guys",
-    genre: "Battle Royale",
-    platform: "PC (Windows)",
-    publisher: "Mediatonic",
-    developer: "Mediatonic",
-    release_date: "2020-08-04",
-    freetogame_profile_url: "https://www.freetogame.com/fall-guys",
     category: "strategy"
   },
   {
@@ -103,11 +60,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/340/thumbnail.jpg",
     short_description: "A free-to-play browser-based RTS based on the George R.R. Martin novels and popular HBO series.",
     game_url: "https://www.freetogame.com/open/game-of-thrones-winter-is-coming",
-    genre: "Strategy",
-    platform: "Web Browser",
-    publisher: "GTArcade",
-    developer: "YOOZOO Games ",
-    release_date: "2019-11-14",
     freetogame_profile_url: "https://www.freetogame.com/game-of-thrones-winter-is-coming"
   },
   {
@@ -116,12 +68,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/347/thumbnail.jpg",
     short_description: "A browser based city-building strategy MMO set in the fantasy world of Elvenar.",
     game_url: "https://www.freetogame.com/open/elvenar",
-    genre: "Strategy",
-    platform: "Web Browser",
-    publisher: "InnoGames",
-    developer: "InnoGames",
-    release_date: "2015-04-08",
-    freetogame_profile_url: "https://www.freetogame.com/elvenar",
     category: "adventure"
   },
   {
@@ -130,12 +76,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/11/thumbnail.jpg",
     short_description: "A free-to-play 3D action MMORPG based on the acclaimed Dungeons & Dragons fantasy roleplaying game. ",
     game_url: "https://www.freetogame.com/open/neverwinter",
-    genre: "MMORPG",
-    platform: "PC (Windows)",
-    publisher: "Perfect World Entertainment",
-    developer: "Cryptic Studios",
-    release_date: "2013-12-06",
-    freetogame_profile_url: "https://www.freetogame.com/neverwinter",
     category: "strategy"
   },
   {
@@ -143,27 +83,13 @@ export let products = [
     title: "Dark Orbit Reloaded",
     thumbnail: "https://www.freetogame.com/g/380/thumbnail.jpg",
     short_description: "A browser-based 3D space-combat MMO with a massive playerbase!",
-    game_url: "https://www.freetogame.com/open/darkorbit",
-    genre: "Shooter",
-    platform: "Web Browser",
-    publisher: "Bigpoint",
-    developer: "Bigpoint",
-    release_date: "2006-12-11",
-    freetogame_profile_url: "https://www.freetogame.com/darkorbit",
     category: "shooters"
   },
   {
     id: 517,
     title: "Lost Ark",
     thumbnail: "https://www.freetogame.com/g/517/thumbnail.jpg",
-    short_description: "Smilegate’s free-to-play multiplayer ARPG is a massive adventure filled with lands waiting to be explored, people waiting to be met, and an ancient evil waiting to be destroyed.",
-    game_url: "https://www.freetogame.com/open/lost-ark",
-    genre: "ARPG",
-    platform: "PC (Windows)",
-    publisher: "Amazon Games",
-    developer: "Smilegate RPG",
-    release_date: "2022-02-11",
-    freetogame_profile_url: "https://www.freetogame.com/lost-ark",
+    short_description: "Smilegate's free-to-play multiplayer ARPG is a massive adventure filled with lands waiting to be explored, people waiting to be met, and an ancient evil waiting to be destroyed.",
     category: "adventure"
   },
   {
@@ -171,13 +97,6 @@ export let products = [
     title: "Titan Revenge",
     thumbnail: "https://www.freetogame.com/g/573/thumbnail.jpg",
     short_description: "A 3D Norse-themed browser MMORPG developed and published by Game Hollywood Games",
-    game_url: "https://www.freetogame.com/open/titan-revenge",
-    genre: "MMORPG",
-    platform: "Web Browser",
-    publisher: "Game Hollywood Games",
-    developer: "Game Hollywood Games",
-    release_date: "2023-12-20",
-    freetogame_profile_url: "https://www.freetogame.com/titan-revenge",
     category: "strategy"
   },
   {
@@ -186,12 +105,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/521/thumbnail.jpg",
     short_description: "Built for mobile and also released on PC, Diablo Immortal fills in the gaps between Diablo II and III in an MMOARPG environment.",
     game_url: "https://www.freetogame.com/open/diablo-immortal",
-    genre: "MMOARPG",
-    platform: "PC (Windows)",
-    publisher: "Blizzard Entertainment",
-    developer: "Blizzard Entertainment",
-    release_date: "2022-06-02",
-    freetogame_profile_url: "https://www.freetogame.com/diablo-immortal",
     category: "strategy"
   },
   {
@@ -200,12 +113,6 @@ export let products = [
     thumbnail: "https://www.freetogame.com/g/522/thumbnail.jpg",
     short_description: "Get the full Flyff experience on any platform with the free-to-play browser-based MMORPG Flyff Universe.",
     game_url: "https://www.freetogame.com/open/flyff-universe",
-    genre: "MMORPG",
-    platform: "Web Browser",
-    publisher: "Gala Lab",
-    developer: "Gala Lab",
-    release_date: "2022-06-14",
-    freetogame_profile_url: "https://www.freetogame.com/flyff-universe",
     category: "strategy"
   },
 ]
