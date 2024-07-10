@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button, Typography, Box } from '@mui/material';
-import CartWidget from "../cartWidget/CartWidget";
 
-export const Counter = ({ restar, contador, sumar }) => {
+export const Counter = ({ restar, contador, sumar, onBuy }) => {
+  const handleBuy = () => {
+    if (typeof onBuy === 'function') {
+      onBuy(); // Llama a la función onBuy definida en CounterContainer
+    }
+  };
+
   return (
     <Box display="flex" alignItems="center" justifyContent="center" gap={2} mt={2}>
       <Button 
@@ -25,6 +30,7 @@ export const Counter = ({ restar, contador, sumar }) => {
       <Button 
         variant="contained" 
         color="secondary"
+        onClick={handleBuy} // Llama a handleBuy cuando se hace clic en "Buy"
         sx={{ backgroundColor: '#622f0b', '&:hover': { backgroundColor: '#6e4d35' } }}
       >
         Buy

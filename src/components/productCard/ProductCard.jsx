@@ -30,8 +30,8 @@ export const ProductCard = ({ title, description, price, id, img }) => {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {price}
+        <Typography variant="body1" color="text.primary">
+          ${price}
         </Typography>
       </CardContent>
       <CardActions>

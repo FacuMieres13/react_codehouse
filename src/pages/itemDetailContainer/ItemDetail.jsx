@@ -2,7 +2,7 @@ import React from 'react';
 import CounterContainer from "../../components/counter/CounterContainer";
 import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, onBuy }) => {
   return (
     <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
       <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
@@ -15,14 +15,17 @@ const ItemDetail = ({ item }) => {
           sx={{ objectFit: 'cover' }}
         />
         <CardContent>
-        <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }}>
+          <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center', fontFamily: '"Exo 2", sans-serif' }}>
             {item.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {item.short_description}
           </Typography>
+          <Typography variant="body1" color="text.primary">
+            ${item.price}
+          </Typography>
           <Box mt={2}>
-            <CounterContainer />
+            <CounterContainer onBuy={onBuy} />
           </Box>
         </CardContent>
       </Card>
