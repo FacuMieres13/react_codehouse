@@ -1,0 +1,31 @@
+.containerItemDetail {
+    background-color: #ffe8d2;
+    border: 2px solid #622f0b;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 40%;
+    color: #622f0b;
+    font-family: 'exo 2', sans-serif;
+    text-align: center;
+  }
+  
+  .containerImage {
+    margin-bottom: 20px;
+  }
+  
+  .containerImage img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .containerDetail h2 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .containerDetail span {
+    font-size: 20px;
+    font-weight: bold;
+  }

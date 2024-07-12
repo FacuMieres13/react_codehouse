@@ -1,0 +1,17 @@
+* {
+  font-family: 'Exo 2';
+}
+
+.buy-button {
+  background-color: #c2a584;
+  color: #622f0b;
+  border: 1px solid #622f0b;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: 'Exo 2';
+}
+
+.buy-button:hover {
+  background-color: #622f0b;
+  color: #ffe8d2;
+}
