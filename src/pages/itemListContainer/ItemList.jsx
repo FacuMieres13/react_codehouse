@@ -1,7 +1,6 @@
 import { ProductCard } from "../../components/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
-  console.log(items);
   return (
     <div
       style={{
@@ -17,7 +16,7 @@ const ItemList = ({ items }) => {
           <ProductCard
             key={elemento.id}
             title={elemento.title}
-            description={elemento.short_description}
+            description={elemento.description}
             price={elemento.price}
             id={elemento.id}
             img={elemento.thumbnail}

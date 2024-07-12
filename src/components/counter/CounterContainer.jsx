@@ -1,31 +1,29 @@
-// CounterContainer.js
-
 import { useState } from "react";
 import { Counter } from "./Counter";
 
-const CounterContainer = ({ onBuy }) => {
-  const [contador, setContador] = useState(1);
+const CounterContainer = ({ onAdd, stock, initial = 1 }) => {
+  const [contador, setContador] = useState(initial);
 
   const sumar = () => {
-    setContador(contador + 1);
+    if (contador < stock) {
+      setContador(contador + 1);
+    } else {
+      alert("stock maximo");
+    }
   };
 
   const restar = () => {
     if (contador > 1) {
       setContador(contador - 1);
     } else {
-      alert("Mínimo");
+      alert("Minimo");
     }
   };
+  // las unidades
 
-  const handleBuy = () => {
-    if (typeof onBuy === 'function') {
-      onBuy(contador); // Pasar la cantidad seleccionada al comprar
-      setContador(1); // Resetear contador después de comprar
-    }
-  };
-
-  return <Counter contador={contador} sumar={sumar} restar={restar} onBuy={handleBuy} />;
+  return (
+    <Counter contador={contador} sumar={sumar} restar={restar} onAdd={onAdd} />
+  );
 };
 
 export default CounterContainer;

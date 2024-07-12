@@ -1,45 +1,66 @@
-// Cart.js
-
-import React from 'react';
-import { useCart } from '../../components/context/CartContext';
-import './Cart.css'; 
+import { Button } from "@mui/material";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../components/context/CartContext";
+import Swal from "sweetalert2";
 
 const Cart = () => {
-  const { cartItems } = useCart();
+  const { cart, clearCart, deleteProduct, getTotalPrice } =
+    useContext(CartContext);
+  let total = getTotalPrice(); // numero
 
-  const calculateItemTotal = (item) => {
-    return (item.totalPrice || 0).toFixed(2);
-  };
-
-  const calculateTotal = () => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += item.totalPrice || 0;
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Seguro quieres eliminar?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "si, borrar",
+      denyButtonText: `no, no borrar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Eliminado", "", "success");
+        deleteProduct(id);
+      } else if (result.isDenied) {
+        Swal.fire("No se elimino", "", "info");
+      }
     });
-    return total.toFixed(2);
   };
 
   return (
-    <div className="cart-container">
-      <h1 className="cart-title">Shopping Cart</h1>
-      <ul>
-        {cartItems.map((item, index) => (
-          <li className="cart-item" key={index}>
-            <img className="item-image" src={item.thumbnail} alt={item.title} />
-            <div className="item-details">
-              <h3 className="item-title">{item.title}</h3>
-              <p className="item-description">{item.short_description}</p>
-              <p className="item-price">${item.price}</p>
-              <p>Cantidad: {item.quantity}</p>
-              <p>Total: ${calculateItemTotal(item)}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div className="cart-total">
-        <h3>Total:</h3>
-        <p>${calculateTotal()}</p>
-      </div>
+    <div>
+      {cart.map((elemento) => {
+        return (
+          <div
+            key={elemento.id}
+            style={{ border: "2px solid black", width: "200px" }}
+          >
+            <h2>{elemento.title}</h2>
+            <h2>{elemento.quantity}</h2>
+            <h2>{elemento.price}</h2>
+            <Button
+              variant="contained"
+              onClick={() => handleDelete(elemento.id)}
+            >
+              Eliminar
+            </Button>
+          </div>
+        );
+      })}
+      <h2 className={cart.length > 0 ? "title" : "ocultar"}>
+        El total a pagar es {total}
+      </h2>
+      {cart.length > 0 && <Button onClick={clearCart}>Limpiar carrito </Button>}
+
+      <Link to="/checkout">
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: cart.length > 0 ? "blue" : "red",
+          }}
+        >
+          Finalizar compra
+        </Button>
+      </Link>
     </div>
   );
 };

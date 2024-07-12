@@ -1,49 +1,109 @@
-// CartContext.js
+import { createContext, useState } from "react";
 
-import React, { createContext, useContext, useState } from 'react';
+export const CartContext = createContext();
 
-const CartContext = createContext();
+const CartContextProvider = ({ children }) => {
+  const [cart, setCart] = useState([]); // [ {id:1}, {id:5}, {id:3} ] -
+  // quantity 10 - price 5 ---> 50
+  // quantity 3 - price 10 ---> 30
 
-export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  // sumar todos los subtotales // 80
 
-  const addItemToCart = (itemToAdd) => {
-    const existingItemIndex = cartItems.findIndex((item) => item.id === itemToAdd.id);
-
-    if (existingItemIndex !== -1) {
-      // Si el artículo ya está en el carrito, actualiza la cantidad y el precio total
-      const updatedCartItems = cartItems.map((item, index) => {
-        if (index === existingItemIndex) {
+  // funcion modificar
+  const addToCart = (product) => {
+    let existe = isInCart(product.id);
+    if (existe) {
+      let newArray = cart.map((elemento) => {
+        // [ {} , {}, {moficiado}, {}, {}]
+        if (elemento.id === product.id) {
           return {
-            ...item,
-            quantity: item.quantity + itemToAdd.quantity,
-            totalPrice: item.totalPrice + (itemToAdd.price * itemToAdd.quantity)
+            ...elemento,
+            quantity: product.quantity,
           };
+        } else {
+          return elemento;
         }
-        return item;
-      });
-
-      setCartItems(updatedCartItems);
+      }); // siempre devuelve un array y siempre de la misma longitud
+      setCart(newArray);
     } else {
-      // Si el artículo no está en el carrito, agrégalo como nuevo
-      setCartItems([...cartItems, itemToAdd]);
+      setCart([...cart, product]);
     }
   };
 
-  // Calcular el número de líneas de artículos únicos en el carrito
-  const cartItemCount = cartItems.length;
+  const clearCart = () => {
+    setCart([]);
+  };
 
-  return (
-    <CartContext.Provider value={{ cartItems, addItemToCart, cartItemCount }}>
-      {children}
-    </CartContext.Provider>
-  );
+  const isInCart = (id) => {
+    let existe = cart.some((product) => product.id === id); // true - false
+    return existe;
+  };
+
+  // una funcion -->
+  // eliminar cada producto
+
+  const deleteProduct = (id) => {
+    // 2
+    // encontrar ese producto y quitarlo
+    console.log(id);
+    // filter ---> siempre devuelve un nuevo array
+    // retornar un booleano [1, 3, 4, 5] -->
+    let newArr = cart.filter((elemento) => elemento.id !== id);
+    setCart(newArr);
+  };
+
+  const getQuantityById = (id) => {
+    // 3
+    // no tenes unididades --> 1
+    // tenes x unidades ---> x unidades
+    let productoEncontrado = cart.find((product) => product.id === id);
+    // siempre el metodo find, devuelve el elemento o undefined si no hay coincidencias
+    //  {} ||  undefined
+
+    // return productoEncontrado.quantity; // se rompe si es undefined
+    return productoEncontrado?.quantity;
+  };
+  // total del precio
+
+  // const getTotalPrice = () => {
+  //   let total = 0; // 10 // 20
+  //   for (let i = 0; i < cart.length; i++) {
+  //     total += cart[i].price * cart[i].quantity;
+  //   }
+  //   return total;
+  // };
+
+  const getTotalPrice = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.price * elemento.quantity;
+    }, 0);
+    return total;
+  };
+  // cantidad de elementos
+  const getTotalItems = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.quantity;
+    }, 0);
+    return total;
+  };
+
+  let data = {
+    cart,
+    addToCart,
+    clearCart,
+    deleteProduct,
+    getQuantityById,
+    getTotalPrice,
+    getTotalItems,
+  };
+
+  return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error('useCart debe ser usado dentro de un CartProvider');
-  }
-  return context;
-};
+export default CartContextProvider;
+
+// map(() => {});
+// map(() => {});
+// map(() => {});
+// map(() => {});
+// reduce(() => {}, valorInicial);

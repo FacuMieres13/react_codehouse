@@ -1,35 +1,29 @@
-import React from 'react';
 import CounterContainer from "../../components/counter/CounterContainer";
-import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
-
-const ItemDetail = ({ item, onBuy }) => {
+const ItemDetail = ({ item, onAdd, initial }) => {
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
-      <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
-        <CardMedia
-          component="img"
-          alt={item.title}
-          height="200"
-          image={item.thumbnail}
-          title={item.title}
-          sx={{ objectFit: 'cover' }}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center', fontFamily: '"Exo 2", sans-serif' }}>
-            {item.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.short_description}
-          </Typography>
-          <Typography variant="body1" color="text.primary">
-            ${item.price}
-          </Typography>
-          <Box mt={2}>
-            <CounterContainer onBuy={onBuy} />
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
+    <>
+      <div>
+        <div className={"containerItemDetail"}>
+          <div className={"containerImage"}>
+            <img src={item.img} alt="" />
+          </div>
+
+          <div className={"containerDetail"}>
+            <h2 style={{ fontFamily: "monospace" }}>
+              <span style={{ fontSize: "23px" }}>Nombre:</span> {item.title}
+            </h2>
+            <h2 style={{ fontFamily: "monospace" }}>
+              <span style={{ fontSize: "23px" }}>Descripcion:</span>{" "}
+              {item.description}
+            </h2>
+            <h2 style={{ fontFamily: "monospace" }}>
+              <span style={{ fontSize: "23px" }}>Precio:</span> ${item.price}.-
+            </h2>
+          </div>
+        </div>
+        <CounterContainer onAdd={onAdd} stock={item.stock} initial={initial} />
+      </div>
+    </>
   );
 };
 

@@ -1,15 +1,18 @@
-// ItemDetailContainer.js
-
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../products";
 import { useParams } from "react-router-dom";
-import { useCart } from "../../components/context/CartContext"; // Importar el contexto del carrito
+import { CartContext } from "../../components/context/CartContext";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
+  const { addToCart, getQuantityById } = useContext(CartContext);
+
   const { id } = useParams();
+
   const [item, setItem] = useState({});
-  const { addItemToCart } = useCart(); // Obtener la función de agregar al carrito desde el contexto
+
+  let initial = getQuantityById(+id);
 
   useEffect(() => {
     let product = products.find((product) => product.id === +id);
@@ -18,13 +21,19 @@ const ItemDetailContainer = () => {
     }
   }, [id]);
 
-  const handleBuy = (quantity) => {
-    const itemToAdd = { ...item, quantity }; // Agregar la cantidad
-    addItemToCart(itemToAdd); // Agregar el artículo al carrito
-    console.log("Artículo comprado:", itemToAdd);
+  const onAdd = (quantity) => {
+    let objetoFinal = { ...item, quantity: quantity };
+    addToCart(objetoFinal);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto Agregado",
+      showConfirmButton: true,
+      timer: 1500,
+    });
   };
 
-  return <ItemDetail item={item} onBuy={handleBuy} />;
+  return <ItemDetail item={item} onAdd={onAdd} initial={initial} />;
 };
 
 export default ItemDetailContainer;
