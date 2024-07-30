@@ -1,8 +1,8 @@
 import { useState } from "react";
+import "./Checkout.css";
 
 const Checkout = () => {
   const [user, setUser] = useState({ nombre: "", email: "", telefono: "" });
-
   const [arrayCheckbox, setArrayCheckbox] = useState([]);
   console.log(arrayCheckbox);
 
@@ -12,8 +12,6 @@ const Checkout = () => {
   };
 
   const capturarData = (event) => {
-    // let { name, value } = event.target;
-    // setUser({ ...user, [name]: value });
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
@@ -24,6 +22,7 @@ const Checkout = () => {
   const handleRadio = (e) => {
     console.log(e.target.value);
   };
+
   const handleCheckbox = (e) => {
     const { value, checked } = e.target;
     if (checked) {
@@ -35,72 +34,44 @@ const Checkout = () => {
   };
 
   return (
-    <div>
-      <h1>Aca va el formulario</h1>
-
-      <form onSubmit={envioDeFormulario}>
-        {/* Inputs  */}
-
+    <div className="checkout-container">
+      <h1 className="checkout-title">Checkout</h1>
+      <form onSubmit={envioDeFormulario} className="checkout-form">
         <input
           type="text"
           placeholder="Ingresa tu nombre"
           onChange={capturarData}
           name="nombre"
+          className="checkout-input"
         />
         <input
-          type="text"
+          type="email"
           placeholder="Ingresa tu email"
           name="email"
           onChange={capturarData}
+          className="checkout-input"
         />
         <input
-          type="text"
-          placeholder="Ingresa tu telefono"
+          type="tel"
+          placeholder="Ingresa tu teléfono"
           name="telefono"
           onChange={capturarData}
+          className="checkout-input"
         />
-        {/* SELECT  */}
-
-        <select onChange={handleSelect}>
+        <select onChange={handleSelect} className="checkout-select">
           <option label="uno" value={"one"} />
           <option label="dos" value={"two"} />
           <option label="tres" value={15} />
         </select>
-        {/* RADIO Buttons  */}
-
-        <label>casa</label>
-        <input
-          type="radio"
-          name="entidad"
-          onChange={handleRadio}
-          value="casa"
-        />
-        <label>avion</label>
-        <input
-          type="radio"
-          name="entidad"
-          onChange={handleRadio}
-          value="avion"
-        />
-
-        {/* RADIO Buttons  */}
-        <label>rojo</label>
-        <input type="checkbox" value={"rojo"} onChange={handleCheckbox} />
-        <label>azul</label>
-        <input type="checkbox" value={"azul"} onChange={handleCheckbox} />
-        <label>verde</label>
-        <input type="checkbox" value={"verde"} onChange={handleCheckbox} />
-        <label>amarillo</label>
-        <input type="checkbox" value={"amarillo"} onChange={handleCheckbox} />
-
-        {/* BOTONES  */}
-
-        <button>enviar</button>
-        <button type="button">cancelar</button>
+        <div className="checkbox-group">
+          <input className="checkbox" type="checkbox" value={"Terms and Conditions"} onChange={handleCheckbox} />
+          <label>Would you like to receive future offers?<br></br></label>
+        </div>
+        <div className="button-group">
+          <button className="checkout-button">enviar</button>
+          <button type="button" className="checkout-button cancel">cancelar</button>
+        </div>
       </form>
-
-      {/* <button onClick={() => sumar(10, 5)}>sumar</button> */}
-      {/* <button onClick={sumar}>sumar</button> */}
     </div>
   );
 };

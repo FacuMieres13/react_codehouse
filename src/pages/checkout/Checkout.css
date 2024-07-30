@@ -1,0 +1,76 @@
+.checkout-container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 3em;
+    padding: 20px;
+    background-color: #ffe8d2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-title {
+    text-align: center;
+    color: #622f0b;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkout-input,
+  .checkout-select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c2a584;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #622f0b;
+    background-color: #fff;
+  }
+  
+  .checkout-input:focus,
+  .checkout-select:focus {
+    outline: none;
+    border-color: #622f0b;
+    box-shadow: 0 0 5px rgba(98, 47, 11, 0.5);
+  }
+  
+  .radio-group,
+  .checkbox {
+    margin-bottom: 15px;
+    margin-right: 15px;
+  }
+  
+  .radio-group label,
+  .checkbox-group label {
+    margin-right: 10px;
+    color: #50240a;
+  }
+  
+  .checkout-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #622f0b;
+    color: #ffe8d2;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .checkout-button:hover {
+    background-color: #50240a;
+  }
+  
+  .cancel {
+    background-color: #c2a584;
+    margin-left: 10px;
+  }
+  
+  .cancel:hover {
+    background-color: #50240a;
+    color: #ffe8d2;
+  }
+  
