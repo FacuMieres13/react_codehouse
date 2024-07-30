@@ -3,10 +3,13 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../components/context/CartContext";
 import Swal from "sweetalert2";
+import "./Cart.css"; // Importa el archivo CSS
+
 const Cart = () => {
   const { cart, clearCart, deleteProduct, getTotalPrice } =
     useContext(CartContext);
   let total = getTotalPrice();
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -23,36 +26,42 @@ const Cart = () => {
       }
     });
   };
-  return (
-    <div>
-      {cart.map((elemento) => {
-        return (
-          <div
-            key={elemento.id}
-            style={{ border: "2px solid black", width: "200px" }}
-          >
-            <h2>{elemento.title}</h2>
-            <h2>{elemento.quantity}</h2>
-            <h2>{elemento.price}</h2>
-            <Button
-              variant="contained"
-              onClick={() => handleDelete(elemento.id)}
-            >
-              Delete
-            </Button>
-          </div>
-        );
-      })}
-      <h2 className={cart.length > 0 ? "title" : "hidden"}>
-        Total to pay {total}
-      </h2>
-      {cart.length > 0 && <Button onClick={clearCart}>Clear cart </Button>}
 
-      <Link to="/checkout">
+  return (
+    <div className="cartContainer">
+      {cart.map((elemento) => (
+        <div key={elemento.id} className="cartItem">
+          <img src={elemento.thumbnail} alt="" className="image" />
+          <h2 className="title">{elemento.title}</h2>
+          <h2 className="quantity">Quantity: {elemento.quantity}</h2>
+          <h2 className="price">${elemento.price}</h2>
+          <Button
+            variant="contained"
+            onClick={() => handleDelete(elemento.id)}
+            className="deleteButton"
+          >
+            Delete
+          </Button>
+        </div>
+      ))}
+      {cart.length > 0 && (
+        <>
+          <h2 className="total">Total to pay: ${total}</h2>
+          <Button
+            variant="contained"
+            onClick={clearCart}
+            className="clearButton"
+          >
+            Clear cart
+          </Button>
+        </>
+      )}
+      <Link to="/checkout" className="link">
         <Button
           variant="contained"
+          className="finishButton"
           style={{
-            backgroundColor: cart.length > 0 ? "blue" : "red",
+            backgroundColor: cart.length > 0 ? "#622f0b" : "#ffe8d2",
           }}
         >
           Finish
@@ -61,4 +70,5 @@ const Cart = () => {
     </div>
   );
 };
+
 export default Cart;

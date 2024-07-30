@@ -1,65 +1,93 @@
-.cart-container {
-    background-color: #ffe8d2;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cart-title {
-    text-align: center;
-    color: #622f0b;
-    font-family: 'Exo 2', sans-serif;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #c2a584;
-  }
-  
-  .item-details {
-    flex: 1;
-    margin-left: 20px;
-  }
-  
-  .item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .item-title {
-    color: #622f0b;
-    font-family: 'Exo 2', sans-serif;
-  }
-  
-  .item-description {
-    color: #c2a584;
-  }
-  
-  .item-price {
-    color: #622f0b;
-    font-weight: bold;
-  }
-  .cart-total {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #c2a584;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .cart-total h3 {
-    color: #fff;
-  }
-  
-  .cart-total p {
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: bold;
-  }
+.cartContainer {
+  padding: 20px;
+  background-color: #ffe8d2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+.cartItem {
+  border: 2px solid #622f0b;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #c2a584;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.image {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #622f0b;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.quantity {
+  color: #622f0b;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.price {
+  color: #622f0b;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.deleteButton {
+  background-color: #622f0b;
+  color: #ffe8d2;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #50240a;
+}
+
+.total {
+  color: #622f0b;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.clearButton {
+  background-color: #622f0b;
+  color: #ffe8d2;
+  margin: 20px 0;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.clearButton:hover {
+  background-color: #50240a;
+}
+
+.link {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.finishButton {
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.finishButton:hover {
+  background-color: #501f0b;
+}
