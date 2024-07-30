@@ -1,6 +1,6 @@
 import CartWidget from "../cartWidget/CartWidget";
 import Logo from "/public/Media/EokaStoreLogo.png";
-import "./navBar.css";
+import "./navbar.css";
 import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
