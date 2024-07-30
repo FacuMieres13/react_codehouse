@@ -32,16 +32,18 @@ const Cart = () => {
       {cart.map((elemento) => (
         <div key={elemento.id} className="cartItem">
           <img src={elemento.thumbnail} alt="" className="image" />
-          <h2 className="title">{elemento.title}</h2>
-          <h2 className="quantity">Quantity: {elemento.quantity}</h2>
-          <h2 className="price">${elemento.price}</h2>
-          <Button
-            variant="contained"
-            onClick={() => handleDelete(elemento.id)}
-            className="deleteButton"
-          >
-            Delete
-          </Button>
+          <div className="itemDetails">
+            <h2 className="title">{elemento.title}</h2>
+            <p className="quantity">Quantity: {elemento.quantity}</p>
+            <p className="price">${elemento.price}</p>
+            <Button
+              variant="contained"
+              onClick={() => handleDelete(elemento.id)}
+              className="deleteButton"
+            >
+              Delete
+            </Button>
+          </div>
         </div>
       ))}
       {cart.length > 0 && (

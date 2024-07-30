@@ -16,6 +16,7 @@ export const ProductCard = ({ title, description, price, id, img }) => {
         component={"img"}
         sx={{ height: 200, width: "100%" }}
         image={img}
+        className="img-game"
         title="game image"
       />
       <CardContent className="card-content">
@@ -30,7 +31,7 @@ export const ProductCard = ({ title, description, price, id, img }) => {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        <Typography variant="body1" color="text.primary">
+        <Typography variant="body1" color="text.primary" style={{ fontFamily: '"Exo 2", sans-serif' }}>
           ${price}
         </Typography>
       </CardContent>

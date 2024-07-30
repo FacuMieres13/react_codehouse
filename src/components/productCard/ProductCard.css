@@ -1,6 +1,13 @@
 .card-item {
-  background-color: #ffe8d2;
+  background-color: #ffe8d2 !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.img-game{
+  transition: transform 0.3s;
+}
+.img-game:hover{
+  transform: scale(1.05);
 }
