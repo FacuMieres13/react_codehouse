@@ -94,3 +94,10 @@
 .finishButton:hover {
   background-color: #501f0b !important;
 }
+
+.emptyCartMessage {
+  text-align: center;
+  font-size: 22px;
+  color: #622f0b;
+  margin-top: 20px;
+}

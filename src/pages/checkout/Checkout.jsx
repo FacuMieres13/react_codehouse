@@ -1,78 +1,84 @@
-import { useState } from "react";
-import "./Checkout.css";
+import { useContext, useState } from "react";
+import { CartContext } from "../../components/context/CartContext";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import "./Checkout.css"
 
 const Checkout = () => {
+  const navigate = useNavigate(); // ---> es una funcion
+
   const [user, setUser] = useState({ nombre: "", email: "", telefono: "" });
-  const [arrayCheckbox, setArrayCheckbox] = useState([]);
-  console.log(arrayCheckbox);
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
+  const [orderId, setOrderId] = useState(""); // truthy y falsy
+
+  let total = getTotalPrice();
 
   const envioDeFormulario = (event) => {
     event.preventDefault();
-    console.log(user);
+    let order = {
+      buyer: user,
+      items: cart,
+      total: total,
+    };
+
+    let ordersCollection = collection(db, "orders");
+    let productCollection = collection(db, "products");
+    cart.forEach((elemento) => {
+      let refDoc = doc(productCollection, elemento.id);
+      updateDoc(refDoc, { stock: elemento.stock - elemento.quantity });
+    });
+
+    addDoc(ordersCollection, order)
+      .then((res) => {
+        setOrderId(res.id);
+        toast.success(`Gracias por tu compra , tu ticket es ${res.id} `);
+      })
+      .catch()
+      .finally(() => {
+        clearCart();
+        navigate("/");
+      });
   };
 
   const capturarData = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
-  const handleSelect = (e) => {
-    console.log(e.target.value);
-  };
-
-  const handleRadio = (e) => {
-    console.log(e.target.value);
-  };
-
-  const handleCheckbox = (e) => {
-    const { value, checked } = e.target;
-    if (checked) {
-      setArrayCheckbox([...arrayCheckbox, value]);
-    } else {
-      let newArr = arrayCheckbox.filter((el) => el !== value);
-      setArrayCheckbox(newArr);
-    }
-  };
-
   return (
-    <div className="checkout-container">
-      <h1 className="checkout-title">Checkout</h1>
-      <form onSubmit={envioDeFormulario} className="checkout-form">
+    <div className="form-container">
+    <h1 className="form-title">Checkout</h1>
+    {orderId ? (
+      <h2 className="thankyou-message">Thank you for your purchase, your ticket is: {orderId}</h2>
+    ) : (
+      <form onSubmit={envioDeFormulario} className="form-content">
         <input
           type="text"
-          placeholder="Ingresa tu nombre"
+          placeholder="Enter your name"
           onChange={capturarData}
-          name="nombre"
-          className="checkout-input"
+          name="name"
+          className="form-input"
         />
         <input
           type="email"
-          placeholder="Ingresa tu email"
+          placeholder="Enter your email"
           name="email"
           onChange={capturarData}
-          className="checkout-input"
+          className="form-input"
         />
         <input
           type="tel"
-          placeholder="Ingresa tu teléfono"
-          name="telefono"
+          placeholder="Enter your phone number"
+          name="phone"
           onChange={capturarData}
-          className="checkout-input"
+          className="form-input"
         />
-        <select onChange={handleSelect} className="checkout-select">
-          <option label="uno" value={"one"} />
-          <option label="dos" value={"two"} />
-          <option label="tres" value={15} />
-        </select>
-        <div className="checkbox-group">
-          <input className="checkbox" type="checkbox" value={"Terms and Conditions"} onChange={handleCheckbox} />
-          <label>Would you like to receive future offers?<br></br></label>
-        </div>
-        <div className="button-group">
-          <button className="checkout-button">enviar</button>
-          <button type="button" className="checkout-button cancel">cancelar</button>
-        </div>
+        <button className="form-button">Buy</button>
       </form>
-    </div>
+    )}
+  </div>
+
   );
 };
 
