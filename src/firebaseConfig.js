@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 const firebaseConfig = {
-    apiKey: "AIzaSyCLmKKwaHSvZztViQI6oRE_qiCwh12Od4w",
-    authDomain: "eoka-store.firebaseapp.com",
-    projectId: "eoka-store",
-    storageBucket: "eoka-store.appspot.com",
-    messagingSenderId: "273552661152",
-    appId: "1:273552661152:web:a815287f4bd924d28147c5"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+    appId: import.meta.env.VITE_APPID
 };
 
 const app = initializeApp(firebaseConfig);
