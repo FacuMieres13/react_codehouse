@@ -29,7 +29,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
     npm install sonner
     ```
     ```bash
-    npm install sweetalert
+    npm install sweetalert2
     ```
     ```bash
     npm install @mui/material @emotion/react @emotion/styled
