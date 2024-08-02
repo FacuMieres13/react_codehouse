@@ -1,7 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+
 export const CartContext = createContext();
+
 const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (product) => {
     let existe = isInCart(product.id);
     if (existe) {
@@ -20,33 +30,40 @@ const CartContextProvider = ({ children }) => {
       setCart([...cart, product]);
     }
   };
+
   const clearCart = () => {
     setCart([]);
   };
+
   const isInCart = (id) => {
     let existe = cart.some((product) => product.id === id);
     return existe;
   };
+
   const deleteProduct = (id) => {
     let newArr = cart.filter((elemento) => elemento.id !== id);
     setCart(newArr);
   };
+
   const getQuantityById = (id) => {
     let productoEncontrado = cart.find((product) => product.id === id);
     return productoEncontrado?.quantity;
   };
+
   const getTotalPrice = () => {
     let total = cart.reduce((acc, elemento) => {
       return acc + elemento.price * elemento.quantity;
     }, 0);
     return total;
   };
+
   const getTotalItems = () => {
     let total = cart.reduce((acc, elemento) => {
       return acc + elemento.quantity;
     }, 0);
     return total;
   };
+
   let data = {
     cart,
     addToCart,
@@ -56,6 +73,7 @@ const CartContextProvider = ({ children }) => {
     getTotalPrice,
     getTotalItems,
   };
+
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
