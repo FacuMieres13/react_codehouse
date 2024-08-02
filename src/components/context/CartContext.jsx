@@ -28,7 +28,6 @@ const CartContextProvider = ({ children }) => {
     return existe;
   };
   const deleteProduct = (id) => {
-    console.log(id);
     let newArr = cart.filter((elemento) => elemento.id !== id);
     setCart(newArr);
   };
